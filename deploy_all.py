@@ -10,7 +10,7 @@ MODEL_PATH = "app/inference/weights/best_unet_model.pth"
 # 1. Create and Upload to Model Repo
 print("Creating Model Repo...")
 try:
-    api.create_repo(repo_id=MODEL_REPO, repo_type="model", exist_ok=True)
+    api.create_repo(repo_id=MODEL_REPO, repo_type="model", exist_ok=True, private=False)
 except Exception as e:
     print(f"Model repo creation error: {e}")
 
@@ -26,7 +26,7 @@ print("Model upload successful!")
 # 2. Create and Upload to Space Repo
 print("\nCreating Space Repo...")
 try:
-    api.create_repo(repo_id=SPACE_REPO, repo_type="space", space_sdk="docker", exist_ok=True)
+    api.create_repo(repo_id=SPACE_REPO, repo_type="space", space_sdk="docker", exist_ok=True, private=False)
 except Exception as e:
     print(f"Space repo creation error: {e}")
 

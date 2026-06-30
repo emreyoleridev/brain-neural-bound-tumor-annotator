@@ -9,7 +9,7 @@ MODEL_PATH = "app/inference/weights/best_unet_model.pth"
 api = HfApi()
 print(f"Creating repo: {REPO_ID} ...")
 try:
-    api.create_repo(repo_id=REPO_ID, repo_type="model", exist_ok=True)
+    api.create_repo(repo_id=REPO_ID, repo_type="model", exist_ok=True, private=False)
 except Exception as e:
     print("Error creating repo:", e)
 
