@@ -2,7 +2,7 @@ from huggingface_hub import HfApi
 
 # Kendi bilgilerinizi buraya girin
 HF_USERNAME = "emreyoleridev"
-REPO_NAME = "medvision-unet"
+REPO_NAME = "brain-neural-bound-tumor-model"
 REPO_ID = f"{HF_USERNAME}/{REPO_NAME}"
 MODEL_PATH = "app/inference/weights/best_unet_model.pth"
 

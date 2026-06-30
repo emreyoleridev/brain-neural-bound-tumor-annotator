@@ -3,8 +3,8 @@ from huggingface_hub import HfApi
 
 api = HfApi()
 USERNAME = "emreyoleridev"
-MODEL_REPO = f"{USERNAME}/medvision-unet"
-SPACE_REPO = f"{USERNAME}/medvision-ai"
+MODEL_REPO = f"{USERNAME}/brain-neural-bound-tumor-model"
+SPACE_REPO = f"{USERNAME}/brain-neural-bound-tumor-annotator"
 MODEL_PATH = "app/inference/weights/best_unet_model.pth"
 
 # 1. Create and Upload to Model Repo
