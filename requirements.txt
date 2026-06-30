@@ -16,3 +16,6 @@ streamlit>=1.25.0
 
 # Utilities
 tqdm>=4.65.0
+kaggle>=1.6.0
+
+nibabel>=4.0.0
