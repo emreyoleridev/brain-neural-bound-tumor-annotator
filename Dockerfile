@@ -17,8 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Tüm proje kodlarını kopyala
 COPY . .
 
-# Streamlit portunu aç
-EXPOSE 8501
+# Hugging Face Spaces Docker portunu aç
+EXPOSE 7860
 
 # Uygulamayı başlat
-CMD ["streamlit", "run", "streamlit_app/app.py"]
+CMD ["streamlit", "run", "streamlit_app/main.py", "--server.port=7860", "--server.address=0.0.0.0"]
