@@ -36,7 +36,15 @@ class BrainTumorPredictor:
         
         # Load trained weights
         if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Weights not found at {model_path}. Did you train the model?")
+            print(f"[INFO] Local weights not found at {model_path}. Trying to download from Hugging Face Hub...")
+            try:
+                from huggingface_hub import hf_hub_download
+                # Kendi Hugging Face kullanıcı adınızı aşağıya yazın (emreyoleridev kısmına)
+                hf_repo_id = "emreyoleridev/brain-neural-bound-tumor-model" 
+                model_path = hf_hub_download(repo_id=hf_repo_id, filename="best_unet_model.pth")
+                print(f"[INFO] Successfully downloaded weights to {model_path}")
+            except Exception as e:
+                raise FileNotFoundError(f"Weights not found locally and could not be downloaded from HF: {e}")
             
         state_dict = torch.load(model_path, map_location=self.device)
         self.model.load_state_dict(state_dict)
